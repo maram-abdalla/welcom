@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Hand Gloves</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6e45e2, #88d3ce);
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 30px 0 10px; /* Adjusted margin */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            margin: 0 auto 30px; /* Centered with margin at the bottom */
+            max-width: 800px; /* Limit width for better readability */
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #ff6b6b;
+            color: #fff;
+            font-size: 1.2em;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #ff4757;
+            transform: translateY(-3px);
+        }
+
+        /* Welcome Page Styles */
+        #welcome-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(110, 69, 226, 0.8), rgba(136, 211, 206, 0.8)), url('four-members-outside-12-03-21_0.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Main Content Styles */
+        #main-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .content-container {
+            position: relative;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            z-index: 1;
+        }
+
+        .content-container h3 {
+            position: relative;
+            z-index: 2; /* Ensure text is above the overlay */
+            font-size: 1.2em;
+            margin: 0;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for text */
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            margin-top: 30px;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.8em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        #output {
+            font-size: 1.4em;
+            margin-top: 30px;
+            color: #e3f6f5;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .content-container, h2, h3, #output {
+            animation: slideIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Page -->
+    <div id="welcome-page">
+        <h1>Smart Hand Gloves</h1>
+        <p id="output">Please wait for the assistant to speak...</p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <h1>Smart Hand Gloves</h1>
+        <p class="subtitle">Imagine if blind people could see the world not with their eyes, but with technology! This research introduces a smart glove that turns obstacles and hazards into audio alerts, giving users the freedom to navigate with unprecedented confidence and safety.</p>
+        
+        <!-- Text inside h2 and h3 elements to be read aloud -->
+         <div>
+            
+        <h2 id="user-purpose">background research:</h2>
+      
+            <h3 id="user-purpose-text">Blind individuals face significant mobility challenges due to the limitations of
+                traditional aids. White canes detect only nearby obstacles, often leaving users 
+               vulnerable to unexpected hazards. Guide dogs, despite their benefits, are 
+               inaccessible to most, as only 2-8% of blind individuals worldwide use them due to high training costs exceeding $50,000 and the need for ongoing care. Relying on human assistance, while helpful, limits personal independence. These 
+               challenges make daily navigation difficult, highlighting the need for a more 
+               accessible and 
+               efficient solution. Could technology unlock a new way of 'seeing' for the blind, enhancing their independence and mobility? 
+                 </h3></div>
+        
+
+        <h2 id="user-title">Introduction</h2>
+        <h2 id="user-frist">help blind people</h2>
+      
+            <h3 id="user-frist-text">Blindness is a permanent condition that requires constant care to avoid injuries and exposure to others. 
+                Blind people must rely on themselves and technology to navigate their environment safely. 
+                Smart hand gloves can help them appreciate obstacles without knowing their distance, allowing them to move easily and safely without relying on others.
+            </h3>
+      
+        <h2 id="user-second">Reduce Accidents</h2>
+        <h3 id="user-second-text">Research Mobility-Related Accidents Experienced by
+            Doctor of Philosophy Roberto and Doctor of Philosophy Sri found that 92% of participants experienced 
+            head-level accidents more than once a month due to default white walking sticks and guide dogs failing to warn 
+            visually impaired individuals. Smart hand gloves for blind people can help them move around indoors, reducing the 
+            workload for those who assist the blind.</h3>
+
+        <h2 id="user-work">What are the components of smart hand gloves and scope of work?</h2>
+        <h3 id="user-component">5 ultrasonic, 1 Mini Breadboard,1 temperature sensor DH11, 1 earphone, 1 Arduino uno, 1 buzzer, 1 glove,1mine push button,1.flame sensor,many jumper wires,1 gloves.</h3>
+
+        <h2 id="user-project">Project Targets</h2>
+        <h3 id="user-project-targets">
+            • Low price: affordable development thus far and the material is available anywhere.<br>
+            • Safety: The smart hand gloves do not contain any harmful substances. RoHS (Reduction of Hazardous Substances) = Yes.<br>
+            • High efficiency: Helps to ease the navigation process for the needy, reducing the risk of walking for blind people.<br>
+            • Clean power source: We use rechargeable batteries.
+        </h3>
+        <h2 id="user-Data-analysis">Data analysis </h2>
+        <h3 id="user-Data-analysis-work">96.25% accuracy in detecting obstacles and giving audio alerts.
+            Fast response and accurate environmental analysis of temperature and thermal hazards.
+            High accuracy in obstacle detection: The sensors successfully recognize obstacles in different directions (right, left, front, above, below).
+            Immediate response: Audio alerts are issued as soon as an obstacle is detected, giving the user enough time to change their course. 
+            Detection of thermal hazards: The flame sensor efficiently identifies the presence of fire, helping to avoid dangerous situations. 
+            Providing accurate environmental data: The temperature sensor provides the user with precise information about the surrounding temperature, enabling them to make appropriate decisions while navigating.
+
+
+        </h3>
+
+        <h2 id="user-future">Future Work</h2>
+        <h3 id="user-future-work">
+            • Adding more sensors like pulse and color sensors.<br>
+            • Implementing navigation and memory storage for locations.<br>
+            • Enabling automatic synchronization between gloves and mobile phones.
+        </h3>
+
+   
+    </div>
+
+    <script>
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRecognition) {
+            alert("Speech Recognition API is not supported by your browser.");
+        } else {
+            const recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US';
+
+            function welcomeMessage() {
+                const welcomeText = "Welcome! If you want me to read this page to you, say 'Yes'. If you don't want me to read it, say 'No'.";
+                speak(welcomeText);
+                setTimeout(() => {
+                    startListening();
+                }, 4000);
+            }
+
+            function startListening() {
+                recognition.start();
+            }
+
+            function stopListening() {
+                recognition.stop();
+            }
+
+            recognition.onstart = function() {
+                console.log("Listening...");
+            };
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[event.results.length - 1][0].transcript.toLowerCase();
+                document.getElementById('output').textContent = "You said: " + transcript;
+                processCommand(transcript);
+            };
+
+            recognition.onerror = function(event) {
+                console.error("Error occurred in recognition: " + event.error);
+            };
+
+            function processCommand(command) {
+                if (command.includes("yes")) {
+                    document.getElementById('output').textContent = "You said: Yes. I will read the text aloud.";
+                    setTimeout(() => {
+                        transitionToHomePage();
+                        speakHomePageContent();
+                    }, 2000);
+                } else if (command.includes("no")) {
+                    document.getElementById('output').textContent = "You said: No. You will read it yourself.";
+                    setTimeout(() => {
+                        transitionToHomePage();
+                        speak("You chose to read the text yourself.");
+                    }, 2000);
+                } else {
+                    document.getElementById('output').textContent = "Command not recognized. Please say 'Yes' or 'No'.";
+                    setTimeout(() => {
+                        speak("Sorry, I didn't understand that.");
+                    }, 2000);
+                }
+            }
+
+            function speak(text) {
+                const speech = new SpeechSynthesisUtterance(text);
+                speech.lang = 'en-US';
+                speech.pitch = 1;
+                speech.rate = 1;
+                window.speechSynthesis.speak(speech);
+            }
+
+            function speakHomePageContent() {
+                const title = document.querySelector('#main-content h1').textContent;
+                const subtitle = document.querySelector('#main-content .subtitle').textContent;
+                const userPurpose = document.getElementById('user-purpose').textContent;
+                const userPurposeText = document.getElementById('user-purpose-text').textContent;
+                const userTitle = document.getElementById('user-title').textContent;
+                const userFrist = document.getElementById('user-frist').textContent;
+                const userFristText = document.getElementById('user-frist-text').textContent;
+                const userSecond = document.getElementById('user-second').textContent;
+                const userSecondText = document.getElementById('user-second-text').textContent;
+                const userWork = document.getElementById('user-work').textContent;
+                const userComponent = document.getElementById('user-component').textContent;
+                const userProject = document.getElementById('user-project').textContent;
+                const userProjectTargets = document.getElementById('user-project-targets').textContent;
+                const userDataAnalysis = document.getElementById('user-Data-analysis').textContent;
+                const userDataAnalysisWork = document.getElementById('user-Data-analysis-work').textContent;
+                const userFuture = document.getElementById('user-future').textContent;
+                const userFutureWork = document.getElementById('user-future-work').textContent;
+                
+                const combinedText = `${title}. ${subtitle}. ${userPurpose}: ${userPurposeText}. ${userTitle}. ${userFrist}. ${userFristText}. ${userSecond}. ${userSecondText}. ${userWork}. ${userComponent}. ${userProject}. ${userProjectTargets}. ${userDataAnalysis}. ${userDataAnalysisWork}. ${userFuture}. ${userFutureWork}`;
+                speak(combinedText);
+            }
+
+            function transitionToHomePage() {
+                document.getElementById('welcome-page').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }
+
+            window.onload = welcomeMessage;
+        }
+    </script>
+</body>
+</html>
